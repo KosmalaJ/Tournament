@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+>
+<head>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bracket.css}">
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<div class="tournament-container">
+    <div class="tournament-headers">
+        <h3>1/16</h3>
+        <h3>1/8</h3>
+        <h3>Półfinał</h3>
+        <h3>Finał</h3>
+        <h3>Zwycięzca</h3>
+    </div>
+
+    <div class="tournament-brackets">
+        <ul class="bracket bracket-1">
+            <li class="team-item">A2 <time>14:00</time> C2</li>
+            <li class="team-item">D1 <time>20:00</time> 3BEF</li>
+            <li class="team-item">B1 <time>17:00</time> 3ACD</li>
+            <li class="team-item">F1 <time>20:00</time> E2</li>
+            <li class="team-item">C1 <time>17:00</time> 3ABF</li>
+            <li class="team-item">E1 <time>17:00</time> D2</li>
+            <li class="team-item">A1 <time>14:00</time> 3CDE</li>
+            <li class="team-item">B2 <time>20:00</time> F2</li>
+        </ul>
+        <ul class="bracket bracket-2">
+            <li class="team-item">QF1 <time>20:00</time> QF2</li>
+            <li class="team-item">QF3 <time>20:00</time> QF4</li>
+            <li class="team-item">QF5 <time>20:00</time> QF6</li>
+            <li class="team-item">QF7 <time>20:00</time> QF8</li>
+        </ul>
+        <ul class="bracket bracket-3">
+            <li class="team-item">SF1 <time>20:00</time> SF2</li>
+            <li class="team-item">SF3 <time>20:00</time> SF4</li>
+        </ul>
+        <ul class="bracket bracket-4">
+            <li class="team-item">F1 <time>20:00</time> F2</li>
+        </ul>
+
+        <ul class="bracket bracket-5">
+            <li class="team-item">Zwycięzca</li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

@@ -1,6 +1,8 @@
 package hello.controller;
 import javax.validation.Valid;
 
+import hello.model.Tournament;
+import hello.service.TournamentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -21,6 +23,8 @@ public class UserController {
 
     @Autowired
     private UserService userService;
+    @Autowired
+    private TournamentService tournamentService;
 
     @RequestMapping(value= {"/", "/login"}, method=RequestMethod.GET)
     public ModelAndView login() {
@@ -82,10 +86,10 @@ public class UserController {
     {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         List<User> myusers= userService.findAllUsers();
-        System.out.println(myusers.get(0).getFirstname());
-
+List<Tournament> tournaments=tournamentService.findAllTournaments();
         ModelAndView model =new ModelAndView();
         model.addObject("users",myusers);
+        model.addObject("tournaments",tournaments);
             model.setViewName("/home/example");
             return model;
 

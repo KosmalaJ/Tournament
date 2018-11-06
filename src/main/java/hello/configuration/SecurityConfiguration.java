@@ -5,6 +5,7 @@ import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.annotation.Order;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -38,8 +39,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 
     @Override
     protected void configure(HttpSecurity http) throws Exception{
-        http.authorizeRequests()
-                .antMatchers("/").permitAll()
+        http.httpBasic().and().authorizeRequests().antMatchers("/api/**").authenticated().and().authorizeRequests().
+
+                antMatchers("/").permitAll()
                 .antMatchers("/login").permitAll()
                 .antMatchers("/signup").permitAll()
                 .antMatchers("/home/**").hasAuthority("ADMIN").anyRequest()
@@ -54,7 +56,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
                 .and().rememberMe()
                 .tokenRepository(persistentTokenRepository())
                 .tokenValiditySeconds(60*60)
-                .and().exceptionHandling().accessDeniedPage("/access_denied");
+                .and().exceptionHandling().accessDeniedPage("/access_denied")
+
+        ;
     }
 
     @Bean

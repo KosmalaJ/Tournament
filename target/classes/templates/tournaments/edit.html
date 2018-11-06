@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Edytuj turniej o nazwie :</h1>
+<span th:utext="${tournament.name}"></span>
+<h1>
+    Fazy turnieju
+</h1>
+<th:block th:each="phase : ${tournament.phases}">
+    <tr>
+
+        <td th:text="${phase.name}">...</td>
+
+    </tr>
+</body>
+</html>

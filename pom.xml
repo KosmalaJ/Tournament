@@ -4,12 +4,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>hello</groupId>
-    <artifactId>SpringBootSigninSignupExample</artifactId>
+    <artifactId>RestTournament</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>SpringBootSigninSignupExample</name>
-    <description>Demo project for Spring Boot</description>
+    <name>RestTournamentApp</name>
+    <description>Praca inżynierska</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>

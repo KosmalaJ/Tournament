@@ -9,11 +9,35 @@
 
 <h2>Lista Zarejestrowanych użytkowników: </h2>
 <table>
+    <tr>
+        <td>Imię</td>
+        <td>nazwisko</td>
+        <td>email</td>
+        <td>nick</td>
+    </tr>
     <th:block th:each="user : ${users}">
         <tr>
             <td th:text="${user.firstname}">...</td>
             <td th:text="${user.lastname}">...</td>
             <td th:text="${user.email}">...</td>
+            <td th:text="${user.username}">...</td>
+        </tr>
+
+    </th:block>
+</table>
+<br>
+<h2>Lista Turniejów: </h2>
+<table>
+    <tr>
+        <td>id turnieju</td>
+        <td>nazwa turnieju</td>
+
+    </tr>
+    <th:block th:each="tournament : ${tournaments}">
+        <tr>
+            <td th:text="${tournament.id}">...</td>
+            <td th:text="${tournament.name}">...</td>
+
         </tr>
 
     </th:block>
